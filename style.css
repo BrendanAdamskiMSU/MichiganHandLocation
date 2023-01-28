@@ -1,0 +1,95 @@
+@font-face {
+    font-family: mySecondFont;
+    src: url(x.ttf);
+  }
+@font-face {
+    font-family: myThirdFont;
+    src: url(y.ttf);
+  }
+
+
+body {
+  text-align: center;
+  background-color: rgb(0,40,7);
+  border-color:black;
+  border-width:100px;
+}
+
+.bean {
+  background-color:rgb(177, 159, 137);
+  border-radius: 2vw;
+  color: rgb(81, 140, 72);
+  padding: 3vw;
+  font-size: 8vw;
+  border-color:black;
+  border-width:4vw;
+  padding:3px;
+  margin: 3vw;
+  font-family:mySecondFont;
+}
+.cheese {
+  width: 5vw;
+  height:5vw;
+}
+.listhigh {
+  background-color: rgb(0, 36, 6);
+  border-radius: 2vw;
+  color: rgb(177, 159, 137);
+  padding: 2vw;
+  font-size: 4vw;
+  border-color:black;
+  border-width:100px;
+  padding:.5px;
+  margin: 0vw;
+  font-family:mySecondFont;
+}
+.listlow {
+  
+  border-radius: 2vw;
+  color: rgb(177, 159, 137);
+  padding: 2vw;
+  font-size: 1vw;
+  border-color:black;
+  border-width:100px;
+  padding:1px;
+  margin: 0vw;
+  font-family:myThirdFont;
+}
+
+.read{
+
+  color: rgb(184, 236, 176);
+  padding: 2vw;
+  font-size: 3vw;
+  padding:1px;
+  margin: 0vw;
+  font-family:myThirdFont;
+}
+button{
+  color:rgb(0, 35, 6);
+  border-radius: 1vw;
+  border-color: black;
+  border-width: 3px;
+  font-size: 3vw;
+  background-color: rgb(177, 159, 137);
+  font-family: mySecondFont;
+  margin: 4vw;
+  transition: 1s;
+
+  margin-bottom: 10vw;
+}
+body{
+  margin-bottom: 10vw;
+  transition: 1s;
+}
+button:hover{
+  background-color: rgb(51, 99, 31);
+transition: 1s;
+}
+
+#aaa {
+  transition: 1s;
+}
+a{
+  transition: 2s;
+}

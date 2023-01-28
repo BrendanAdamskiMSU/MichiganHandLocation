@@ -1,16 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpartaHack 8!</title>
-</head>
+<link rel="stylesheet" href="style.css">
 <body>
+<div id = "bean" class = "bean">Michigan Hand Map</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<script class = "cheese" type="text/javascript">
+  // Classifier Variable
+  let classifier;
+  // Model URL
+  let imageModelURL = 'https://teachablemachine.withgoogle.com/models/KhMkCYQUo/';
+  
+  // Video
+  let video;
+  let flippedVideo;
+  // To store the classification
+  let label = "";
+
+  // Load the model first
+  function preload() {
+    classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+  }
+
+  function setup() {
+    createCanvas(320*1.5, 260*1.5);
+    // Create the video
+    video = createCapture(VIDEO);
+    video.size(320, 240);
+    video.hide();
+
+    flippedVideo = ml5.flipImage(video);
+    // Start classifying
+    classifyVideo();
+  }
+
+  function draw() {
+    background(0);
+    // Draw the video
+    width2 = get.width;
+    height2 = get.height;
+    image(flippedVideo, 0, 0, 320*1.5, (260*1.5)-60,);
+
+    // Draw the label
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text(label, width / 2, height - 20);
+
+  }
+
+  // Get a prediction for the current video frame
+  function classifyVideo() {
+    flippedVideo = ml5.flipImage(video)
+    classifier.classify(flippedVideo, gotResult);
+    flippedVideo.remove();
+
+  }
+
+  // When we get a result
+  function gotResult(error, results) {
+    // If there is an error
+    if (error) {
+      console.error(error);
+      return;
+    }
     
-
-
-
+    // The results are in an array ordered by confidence.
+    // console.log(results[0]);
     
+    
+    
+    
+    label = "You're pointing at " + results[0].label + "!";
+    // Classifiy again!
+    classifyVideo();
+  }
+</script>
+
+<div class="read">
+<div>As a Freshman at Michigan State, I found when meeting new people that
+   us native Michiganders love using our hand to show  where we are from. However, 
+  this can get awfully awkward for our out of state students, 
+  as they aren't as aware of the layout of the Michigan cities. </div>
+  <div>
+    The Michigan Hand Map perfectly solves this problem.  Users can easily input
+     the location of their home based on their hand gestures, and our website will perfectly return a name to that location!
+  </div>
+</div>
+
+<a href="#aaa"><button>
+  Continue to the Hand Mapper!
+</button></a>
+
+
+<div class="listhigh"> || Ideal conditions ||  </div>
+<div class="listlow">
+<div>Hand should be filling the screen in the center, use opposite hand to point</div>
+<div>If you need to point across the state, feel free to do so :)</div>
+<div id="aaa">make sure you have a neutral background too :)</div>
+
+</div >
+
 </body>
-</html>
