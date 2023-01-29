@@ -1,0 +1,6 @@
+- domain SSL cert
+- look for typing flaws
+- href smooth
+- clean up devpost
+- doublecheck everything
+-maybe update video?

@@ -26,6 +26,8 @@ body {
   padding:3px;
   margin: 3vw;
   font-family:mySecondFont;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 7px;
 }
 .cheese {
   width: 5vw;
@@ -73,7 +75,7 @@ button{
   font-size: 3vw;
   background-color: rgb(177, 159, 137);
   font-family: mySecondFont;
-  margin: 4vw;
+  margin-top: 2.5vw;
   transition: 1s;
 
   margin-bottom: 10vw;
@@ -92,4 +94,35 @@ transition: 1s;
 }
 a{
   transition: 2s;
+}
+.note{
+  font-size: 1.2vw;
+  font-family: myThirdFont;
+  text-align:center;
+  margin-top:3vw;
+  color:antiquewhite;
+}
+.instructionBody{
+  font-size: 2.5vw;
+  font-family: myThirdFont;
+  text-align:center;
+  margin-bottom:6vw;
+  color:rgb(137, 165, 202);
+}
+.monday{
+  margin-bottom: 2vw;
+  margin-top:3vw;
+}
+.mondayy{
+  font-family: mySecondFont;
+  color:rgb(137, 165, 202);
+  margin-top:3vw;
+  font-size: 4vw;
+}
+
+.f{
+  margin-top: 2vw;
+  width:10%;
+  height:5%;
+  background-color: rgb(255, 255, 255);
 }
